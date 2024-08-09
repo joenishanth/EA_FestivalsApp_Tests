@@ -1,0 +1,31 @@
+{
+  "name": "typescript-practise",
+  "version": "1.0.0",
+  "description": "interfaceex",
+  "main": "index.js",
+  "scripts": {
+    "test": "protractor dist/protractor.conf.js",
+    "protractor": "protractor",
+    "compile": "tsc",
+    "webdriver": "webdriver-manager update",
+    "start-webdriver": "webdriver-manager start"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@cucumber/cucumber": "^10.8.0",
+    "@types/chai": "^4.3.17",
+    "@types/chai-sorted": "^0.2.3",
+    "@types/cucumber": "^6.0.1",
+    "@types/node": "^12.11.1",
+    "axios": "^0.28.1",
+    "chai": "^4.3.4",
+    "chai-sorted": "^0.2.0",
+    "cucumber": "^6.0.5",
+    "protractor": "^7.0.0",
+    "protractor-cucumber-framework": "^6.2.1",
+    "ts-node": "^8.3.0",
+    "typescript": "~4.1.2"
+  },
+  "devDependencies": {}
+}
