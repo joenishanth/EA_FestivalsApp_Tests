@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.config = void 0;
 exports.config = {
     directConnect: true,
-    chromeDriver: 'C:/Users/joeni/AppData/Roaming/npm/node_modules/protractor/node_modules/webdriver-manager/selenium/chromedriver.exe',
+    chromeDriver: '../browserDrivers/chromedriver.exe',
     // Capabilities to be passed to the webdriver instance.
     capabilities: {
         browserName: 'chrome'

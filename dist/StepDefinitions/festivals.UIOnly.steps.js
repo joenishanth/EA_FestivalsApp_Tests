@@ -45,7 +45,7 @@ const festivalsPage = new FestivalsPage_1.FestivalsPage();
 let bandNameEleLst;
 let festivalData;
 let expUIData;
-cucumber_1.Given('I navigate to EAFestivals  website', { timeout: 15 * 1000 }, function () {
+(0, cucumber_1.Given)('I navigate to EAFestivals  website', { timeout: 15 * 1000 }, function () {
     return __awaiter(this, void 0, void 0, function* () {
         yield protractor_1.browser.get('http://localhost:4200/festivals');
         bandNameEleLst = yield festivalsPage.bandNameEleLst();
@@ -53,7 +53,7 @@ cucumber_1.Given('I navigate to EAFestivals  website', { timeout: 15 * 1000 }, f
         expect(bandNameEleLst).to.be.not.empty;
     });
 });
-cucumber_1.Given('I have retrieved the Festival API payload', function () {
+(0, cucumber_1.Given)('I have retrieved the Festival API payload', function () {
     return __awaiter(this, void 0, void 0, function* () {
         const response = yield axios_1.default.get('http://localhost:4200/api/v1/festivals')
             .then(response => {
@@ -63,10 +63,10 @@ cucumber_1.Given('I have retrieved the Festival API payload', function () {
         //Fail the test if the payload is empty
         expect(festivalData).to.be.an('array').that.is.not.empty;
         //Contruct the Data as per it is displayed on the UI
-        expUIData = ObjectMapper_1.FestivalObjectMapper(festivalData);
+        expUIData = (0, ObjectMapper_1.FestivalObjectMapper)(festivalData);
     });
 });
-cucumber_1.Then('I should see Band Names in Alphabetical Order', function () {
+(0, cucumber_1.Then)('I should see Band Names in Alphabetical Order', function () {
     return __awaiter(this, void 0, void 0, function* () {
         let BandNames = [];
         // Get the names of the Bands in the order as displayed
@@ -78,7 +78,7 @@ cucumber_1.Then('I should see Band Names in Alphabetical Order', function () {
         expect(BandNames).to.be.sorted();
     });
 });
-cucumber_1.Then('I should not see duplicate Band Names', function () {
+(0, cucumber_1.Then)('I should not see duplicate Band Names', function () {
     return __awaiter(this, void 0, void 0, function* () {
         let BandNames = [];
         // Get the names of the Bands in the order as displayed
@@ -87,10 +87,10 @@ cucumber_1.Then('I should not see duplicate Band Names', function () {
             BandNames.push(bandName);
         }
         //Assert the Bands are not repeated in the list
-        expect(assertion_utils_1.hasDuplicates(BandNames)).to.be.false;
+        expect((0, assertion_utils_1.hasDuplicates)(BandNames)).to.be.false;
     });
 });
-cucumber_1.Then('I should not see Bands with blank festival locations', { timeout: 15 * 1000 }, function () {
+(0, cucumber_1.Then)('I should not see Bands with blank festival locations', { timeout: 15 * 1000 }, function () {
     return __awaiter(this, void 0, void 0, function* () {
         let bandWithEmptyFestivalRows = [];
         //Get the list of Festival Names for each band
@@ -109,7 +109,7 @@ cucumber_1.Then('I should not see Bands with blank festival locations', { timeou
         expect(bandWithEmptyFestivalRows, `The Bands: "${bandWithEmptyFestivalRows}" dont have any Festival location`).to.be.empty;
     });
 });
-cucumber_1.Then('I should see Festival Names sorted in Alphabetical Order', function () {
+(0, cucumber_1.Then)('I should see Festival Names sorted in Alphabetical Order', function () {
     return __awaiter(this, void 0, void 0, function* () {
         let bandsWithUnsortedFestivals = [];
         //Get the list of Festival Names for each band
@@ -132,7 +132,7 @@ cucumber_1.Then('I should see Festival Names sorted in Alphabetical Order', func
         expect(bandsWithUnsortedFestivals, `The Bands: "${bandsWithUnsortedFestivals}" dont have Festival Names sorted`).to.be.empty;
     });
 });
-cucumber_1.Then('I should see the count of Band names matching', function () {
+(0, cucumber_1.Then)('I should see the count of Band names matching', function () {
     return __awaiter(this, void 0, void 0, function* () {
         expect(bandNameEleLst.length).to.be.equal(expUIData.length);
     });
