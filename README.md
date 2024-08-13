@@ -5,6 +5,7 @@
 2. Chromedriver V.127 is referenced. If your system has a different please download the correct version of Chromedriver and place it inside the browserDrivers folder
 3. Install the vscode extension: Cucumber (Gherkin) Full Support
 4. Add the following properties in the vscode settings
+
         "cucumberautocomplete.steps": [
         "stepDefinitions/*.ts",
         "node_modules/qa-lib/src/step_definitions/*.js"]
