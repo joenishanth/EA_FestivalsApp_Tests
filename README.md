@@ -1,6 +1,6 @@
 # The framework was built using Protractor and Cucumberjs
 
-#Prerequsite:
+## Pre-requisite:
 1. Nodejs V.12 is required to compile and run the tests
 2. Chromedriver V.127 is referenced. If your system has a different please download the correct version of Chromedriver and place it inside the browserDrivers folder
 3. Install the vscode extension: Cucumber (Gherkin) Full Support
